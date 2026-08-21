@@ -7,15 +7,16 @@ const pool = new Pool({
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
   database: process.env.DB_NAME,
+  ssl: process.env.DB_SSL === "true" ? { rejectUnauthorized: false } : false,
 });
 
-// Comprobar la conexión
 pool.connect((err, client, release) => {
   if (err) {
     console.error("Error al conectar con PostgreSQL:", err.stack);
   } else {
-    console.log("✅ Conexión exitosa a la base de datos de Chitalac");
+    console.log("Conexión exitosa a la base de datos de Chitalac");
   }
+
   if (client) release();
 });
 
