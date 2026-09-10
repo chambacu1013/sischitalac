@@ -15,6 +15,9 @@ const generarPDF = async (req, res) => {
 
     pdf.pipe(res);
   } catch (error) {
+    console.error("ERROR GENERANDO FACTURA PDF:", error);
+    console.error("quin_id:", req.params.quin_id);
+    console.error("Stack:", error.stack);
     res.status(500).json({
       ok: false,
 
