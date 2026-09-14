@@ -105,7 +105,7 @@ async function registrarAcopio(datos, usuario) {
 
   if (registroExistente) {
     throw new Error(`Ya se registró leche para este 
-        proveedor en el día ${dia}. Por favor, edite el registro existente.`);
+        proveedor ${prov_id} en el día ${dia}. Por favor, edite el registro existente.`);
   }
 
   const nuevoAcopio = await lecheModel.createAcopio({
