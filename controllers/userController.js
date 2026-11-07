@@ -2,6 +2,11 @@ const userModel = require("../models/userModel");
 const bcrypt = require("bcryptjs"); // Ahora sí funcionará perfecto
 const getUsers = async (req, res) => {
   try {
+    if (req.usuario?.rol !== "ADMINISTRADOR") {
+      return res
+        .status(403)
+        .json({ error: "Acceso restringido al administrador" });
+    }
     const users = await userModel.findAll();
     res.json(users);
   } catch (err) {
@@ -11,7 +16,22 @@ const getUsers = async (req, res) => {
 
 const createUser = async (req, res) => {
   try {
-    const newUser = await userModel.create(req.body);
+    const { nombre, apellido, cedula, username, password, rol_id } = req.body;
+    if (!nombre || !apellido || !cedula || !username || !password || !rol_id) {
+      return res
+        .status(400)
+        .json({ error: "Todos los campos obligatorios deben estar completos" });
+    }
+
+    const password_hash = await bcrypt.hash(password, 10);
+    const newUser = await userModel.create({
+      nombre,
+      apellido,
+      cedula,
+      username,
+      password_hash,
+      rol_id,
+    });
 
     return res.status(201).json({
       mensaje: "Usuario creado correctamente",

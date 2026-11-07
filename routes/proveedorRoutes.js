@@ -10,7 +10,12 @@ const {
 router.get("/", verificarToken, proveedorController.getProveedores);
 
 // Solo el admin debería poder crear nuevos campesinos en el sistema
-router.post("/", verificarToken, proveedorController.createProveedor);
+router.post(
+  "/",
+  verificarToken,
+  verificarRol(["ADMINISTRADOR"]),
+  proveedorController.createProveedor,
+);
 
 router.delete(
   "/:id",

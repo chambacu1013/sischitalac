@@ -5,17 +5,25 @@ const verificarToken = (req, res, next) => {
   // El token suele venir en los Headers como: "Bearer eyJhbGci..."
   const authHeader = req.headers["authorization"];
 
-  if (!authHeader) {
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return res
-      .status(403)
-      .json({ error: "Acceso denegado. No se proporcionó un token." });
+      .status(401)
+      .json({ error: "Acceso denegado. Se requiere un token Bearer válido." });
+  }
+
+  if (!process.env.JWT_SECRET) {
+    console.error("JWT_SECRET no está configurado en el entorno del backend.");
+    return res
+      .status(500)
+      .json({ error: "La autenticación no está configurada en el servidor." });
   }
 
   try {
-    // Extraemos solo el token, ignorando la palabra "Bearer"
-    const token = authHeader.split(" ")[1];
+    const token = authHeader.slice(7).trim();
+    if (!token) {
+      return res.status(401).json({ error: "Token no proporcionado." });
+    }
 
-    // Verificamos si es válido con nuestro secreto
     const decodificado = jwt.verify(token, process.env.JWT_SECRET);
 
     // Guardamos los datos del usuario en la petición para usarlos en el siguiente paso
@@ -23,12 +31,9 @@ const verificarToken = (req, res, next) => {
 
     next(); // Todo está bien, lo dejamos pasar al controlador
   } catch (error) {
-    return res
-      .status(401)
-      .json({
-        error:
-          "Token inválido o expirado. Por favor, inicie sesión nuevamente.",
-      });
+    return res.status(401).json({
+      error: "Token inválido o expirado. Por favor, inicie sesión nuevamente.",
+    });
   }
 };
 

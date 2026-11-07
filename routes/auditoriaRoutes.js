@@ -1,24 +1,16 @@
 const express = require("express");
 const router = express.Router();
-
 const auditoriaController = require("../controllers/auditoriaController");
+const {
+  verificarToken,
+  verificarRol,
+} = require("../middlewares/authMiddleware");
 
-/*=====================================================
-CONSULTAS
-=====================================================*/
-
-// Listado de auditorías (con filtros opcionales)
+// Auditoría y exportación: acceso exclusivo del asesor.
+router.use(verificarToken, verificarRol(["ASESOR"]));
 router.get("/", auditoriaController.obtenerAuditorias);
-
-// Combos de filtros
 router.get("/usuarios", auditoriaController.obtenerUsuariosAuditoria);
-
 router.get("/proveedores", auditoriaController.obtenerProveedoresAuditoria);
-
-// Exportar Excel
 router.get("/exportar", auditoriaController.exportarAuditoriasExcel);
-
-// Detalle de una auditoría
 router.get("/:id", auditoriaController.obtenerAuditoriaPorId);
-
 module.exports = router;
