@@ -1,0 +1,395 @@
+/*=====================================================
+  VARIABLES
+=====================================================*/
+:root{
+
+    --color-primario:#003366;
+    --color-secundario:#f47c20;
+    --color-secundario-dark:#d45500;
+
+    --color-fondo:#f2f4f8;
+
+    --color-blanco:#ffffff;
+
+    --color-borde:#dde3ee;
+
+    --color-placeholder:#b0bfd8;
+
+    --color-texto:#1f2937;
+
+    --color-subtitulo:#8fa0b8;
+
+    --color-error:#d92d20;
+
+    --sombra-card:
+        0 4px 28px rgba(0,30,80,.10),
+        0 1px 4px rgba(0,30,80,.06);
+
+}
+/*=====================================================
+  LAYOUT GENERAL
+=====================================================*/
+.login-container{
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    overflow:hidden;
+
+    background:var(--color-fondo);
+
+}
+/*=====================================================
+  PANEL IZQUIERDO (BRANDING)
+=====================================================*/
+.login-brand{
+
+    width:46%;
+    min-width:460px;
+    background:
+        linear-gradient(
+            155deg,
+            #f47c20 0%,
+            #e8650a 60%,
+            #d45500 100%
+        );
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:40px;
+
+    overflow:hidden;
+
+}
+
+/*=====================================================
+  LOGO
+=====================================================*/
+.logo-badge{
+
+    width:200px;
+    height:90px;
+
+    border-radius:14px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#fff;
+}
+
+.brand-logo-image{
+
+    width:158px;
+    height:auto;
+
+    object-fit:contain;
+
+}
+/*=====================================================
+  TITULOS
+=====================================================*/
+.logo-row{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+}
+
+.logo-text-col{
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+}
+
+.system-title-block{
+
+    margin-top:01px;
+
+}
+/*=====================================================
+  ILUSTRACIÓN
+=====================================================*/
+.illustration-wrap{
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    display:flex;
+    justify-content:center;
+
+}
+
+.illustration-wrap svg{
+
+    width:100%;
+    height:auto;
+
+}
+.brand-svg{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+}
+/*=====================================================
+  PANEL DERECHO
+=====================================================*/
+.login-content{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    background:#e9ebf0;
+}
+/*=====================================================
+  TARJETA LOGIN
+=====================================================*/
+.login-card{
+
+    width:390px;
+    max-width:390px;
+    padding:38px;
+
+    border-radius:18px;
+
+}
+/*=====================================================
+  FORMULARIO
+=====================================================*/
+
+/*=====================================================
+  INPUTS
+=====================================================*/
+.input-group{
+
+    margin-bottom:18px;
+
+}
+
+.input-label{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    color:#4a5568;
+
+    text-transform:uppercase;
+
+}
+
+.input-wrapper{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    border:1px solid var(--color-borde);
+
+    border-radius:8px;
+
+    padding:12px;
+
+    background:#f8fafc;
+
+}
+
+.input-wrapper:focus-within{
+
+    border-color:var(--color-primario);
+
+    box-shadow:
+        0 0 0 3px rgba(0,51,102,.08);
+
+}
+.login-input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    font-size:14px;
+
+    color:#1f2937;
+
+}
+.input-icon{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#98A2B3;
+
+}
+.toggle-password{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:none;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    color:#98A2B3;
+
+    padding:0;
+
+}
+.toggle-password:hover{
+
+    color:#003366;
+
+}
+/*=====================================================
+  BOTÓN LOGIN
+=====================================================*/
+.login-button{
+
+    width:100%;
+
+    border:none;
+
+    border-radius:8px;
+
+    padding:14px;
+
+    cursor:pointer;
+
+    background:var(--color-primario);
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    transition:.20s;
+
+}
+
+.login-button:hover{
+
+    background:#004488;
+
+}
+/*=====================================================
+  MENSAJES DE ERROR
+=====================================================*/
+.login-error{
+
+    padding:12px;
+
+    border-radius:8px;
+
+    background:#FEE4E2;
+
+    border:1px solid #FDA29B;
+
+    color:var(--color-error);
+
+    margin-bottom:20px;
+
+    font-size:14px;
+
+}
+/*=====================================================
+  FOOTER
+=====================================================*/
+.login-footer{
+
+    position:absolute;
+
+    bottom:18px;
+
+    right:28px;
+
+    font-size:12px;
+
+    color:#A0AEC0;
+
+}
+/*=====================================================
+  RESPONSIVE
+=====================================================*/
+.brand-features{
+
+    margin-top:04px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+.feature-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#0a0a0a;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+.feature-icon{
+
+    width:28px;
+
+    height:28px;
+
+    border-radius:8px;
+
+    background:rgba(255,255,255,.18);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+}

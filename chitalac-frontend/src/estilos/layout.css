@@ -1,0 +1,27 @@
+.layout{
+    display:flex;
+    align-items:stretch;
+    min-height:90vh;
+    width:100%;
+    min-height:100vh;
+    background:#F5F7FB;
+}
+.layout-content{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+}
+.layout-main{
+    flex:1;
+    padding:10px;
+    overflow:auto;
+}
+.layout-main::-webkit-scrollbar{
+    width:8px;
+}
+.layout-main::-webkit-scrollbar-thumb{
+    background:#D5DCE6;
+    border-radius:6px;
+
+}

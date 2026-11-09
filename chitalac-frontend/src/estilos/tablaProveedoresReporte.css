@@ -1,0 +1,313 @@
+/* =========================================================
+   TABLA DE PROVEEDORES
+   Reporte Financiero - SISCHITALAC
+   ========================================================= */
+
+.tabla-proveedores-container {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+/* =========================================================
+   PESTAÑAS
+   ========================================================= */
+
+.tabla-proveedores-tabs {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 52px;
+  padding: 0 20px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.tabla-proveedores-tab {
+  position: relative;
+  height: 52px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.tabla-proveedores-tab:hover {
+  color: #2563eb;
+}
+
+.tabla-proveedores-tab.activa {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.tabla-proveedores-tab.activa::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: #2563eb;
+  border-radius: 2px 2px 0 0;
+}
+
+/* =========================================================
+   CONTENEDOR RESPONSIVE DE LA TABLA
+   ========================================================= */
+
+.tabla-proveedores-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+/* =========================================================
+   TABLA
+   ========================================================= */
+
+.tabla-proveedores {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: auto;
+}
+
+/* =========================================================
+   ENCABEZADO
+   ========================================================= */
+
+.tabla-proveedores thead {
+  background: #f8fafc;
+}
+
+.tabla-proveedores th {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+/* Primera columna */
+.tabla-proveedores th:first-child,
+.tabla-proveedores td:first-child {
+  padding-left: 20px;
+}
+
+/* Última columna */
+.tabla-proveedores th:last-child,
+.tabla-proveedores td:last-child {
+  padding-right: 20px;
+}
+
+/* =========================================================
+   FILAS
+   ========================================================= */
+
+.tabla-proveedores tbody tr {
+  background: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.2s ease;
+}
+
+.tabla-proveedores tbody tr:last-child {
+  border-bottom: none;
+}
+
+.tabla-proveedores tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* =========================================================
+   CELDAS
+   ========================================================= */
+
+.tabla-proveedores td {
+  padding: 15px 16px;
+  color: #334155;
+  font-size: 14px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   PROVEEDOR
+   ========================================================= */
+
+.tabla-proveedores td:first-child {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* =========================================================
+   VALORES MONETARIOS
+   ========================================================= */
+
+.tabla-proveedores .valor {
+  color: #334155;
+  font-weight: 500;
+}
+
+.tabla-proveedores .saldo-positivo {
+  color: #15803d;
+  font-weight: 700;
+}
+
+.tabla-proveedores .saldo-negativo {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+/* =========================================================
+   FILA CON SALDO NEGATIVO
+   ========================================================= */
+
+.tabla-proveedores tbody tr.saldo-negativo {
+  background: #fff7f7;
+}
+
+.tabla-proveedores tbody tr.saldo-negativo:hover {
+  background: #fff1f2;
+}
+
+/* =========================================================
+   ESTADOS
+   ========================================================= */
+
+.estado-proveedor {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 76px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.estado-proveedor.ok {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.estado-proveedor.pendiente {
+  color: #b45309;
+  background: #fef3c7;
+}
+
+.estado-proveedor.cancelado {
+  color: #be123c;
+  background: #ffe4e6;
+}
+
+/* =========================================================
+   ACCIONES
+   ========================================================= */
+
+.tabla-proveedores .accion {
+  text-align: center;
+}
+
+.tabla-proveedores .btn-cancelar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 6px 12px;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #dc2626;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.tabla-proveedores .btn-cancelar:hover {
+  border-color: #dc2626;
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.tabla-proveedores .btn-cancelar:active {
+  transform: translateY(1px);
+}
+
+/* =========================================================
+   ESTADO SIN ACCIÓN
+   ========================================================= */
+
+.tabla-proveedores .sin-accion {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* =========================================================
+   ESTADO VACÍO
+   ========================================================= */
+
+.tabla-proveedores-vacia {
+  padding: 48px 20px;
+  color: #64748b;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .tabla-proveedores-container {
+    border-radius: 10px;
+  }
+
+  .tabla-proveedores-tabs {
+    gap: 18px;
+    padding: 0 16px;
+  }
+
+  .tabla-proveedores th {
+    padding: 12px 14px;
+  }
+
+  .tabla-proveedores td {
+    padding: 13px 14px;
+  }
+
+  .tabla-proveedores th:first-child,
+  .tabla-proveedores td:first-child {
+    padding-left: 16px;
+  }
+
+  .tabla-proveedores th:last-child,
+  .tabla-proveedores td:last-child {
+    padding-right: 16px;
+  }
+}
+.tabla-proveedores-grid {
+  width: 100%;
+  background: #ffffff;
+}

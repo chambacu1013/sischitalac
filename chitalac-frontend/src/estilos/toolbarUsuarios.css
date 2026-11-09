@@ -1,0 +1,57 @@
+.toolbar-usuarios{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    gap:20px;
+
+}
+
+.toolbar-info{
+
+    flex:1;
+
+}
+
+.toolbar-info h1{
+
+    margin:0;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#1F2937;
+
+}
+
+.toolbar-info p{
+
+    margin-top:8px;
+
+    color:#6B7280;
+
+    font-size:15px;
+
+}
+
+.toolbar-acciones{
+
+    display:flex;
+
+    gap:15px;
+
+    align-items:center;
+
+}
+
+.toolbar-acciones .MuiTextField-root{
+
+    width:260px;
+
+}

@@ -1,0 +1,53 @@
+.card-seccion{
+
+    border-radius:16px !important;
+
+}
+
+.card-seccion-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:20px;
+
+}
+
+.card-seccion-icono{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:12px;
+
+    background:#E3F2FD;
+
+    color:#1565C0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.card-seccion-titulo{
+
+    font-weight:600 !important;
+
+}
+
+.card-seccion-body{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}

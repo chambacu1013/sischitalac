@@ -1,0 +1,23 @@
+.MuiDialog-paper{
+
+    border-radius:18px !important;
+
+}
+
+.MuiDialogTitle-root{
+
+    background:#F8FAFC;
+
+}
+
+.MuiDialogContent-root{
+
+    padding-top:24px !important;
+
+}
+
+.MuiDialogActions-root{
+
+    background:#F8FAFC;
+
+}
