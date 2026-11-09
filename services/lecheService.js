@@ -55,7 +55,7 @@ async function registrarAcopio(datos, usuario) {
     throw new Error("La fecha del acopio es obligatoria");
   }
 
-  if (Number(litros) < 0) {
+  if (!Number.isFinite(Number(litros)) || Number(litros) < 0) {
     throw new Error("La cantidad de litros debe ser mayor a cero");
   }
 
@@ -180,8 +180,8 @@ async function editarAcopio(lec_id, datos, usuario) {
    */
   await validarFechaLiquidacion(acopio.quin_id, fecha);
 
-  if (Number(litros) < 0) {
-    throw new Error("La cantidad de litros No debe ser negativo");
+  if (!Number.isFinite(Number(litros)) || Number(litros) < 0) {
+    throw new Error("La cantidad de litros debe ser mayor a cero");
   }
 
   /**
