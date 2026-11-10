@@ -173,7 +173,30 @@ SISCHITALAC/
 - `chitalac-mobile`: aplicación Android utilizada por el operario.
 - `chitalacDB.sql`: script SQL de referencia para la estructura de la base de datos.
 
----
+---## Acceso a la plataforma y aplicación
+
+SISCHITALAC cuenta con una plataforma web desplegada y una aplicación móvil Android para el personal operativo.
+
+### Plataforma web
+
+- **Acceso a SISCHITALAC:** https://chitalac-frontend.vercel.app/
+- **Código fuente:** https://github.com/chambacu1013/sischitalac
+
+### Aplicación móvil Android
+
+- **Descargar APK:** [SISCHITALAC - Aplicación Android](https://drive.google.com/file/d/1sy4VC4dMlWn0XrVb_GO6qlrLFjO-OAQt/view?usp=sharing)
+
+La aplicación móvil está destinada al registro de acopios de leche por parte del personal operativo y permite trabajar sin conexión a Internet mediante almacenamiento local y sincronización posterior.
+
+### Infraestructura y servicios
+
+| Componente | Servicio o tecnología |
+|---|---|
+| Plataforma web | Vercel |
+| Backend / API REST | Render |
+| Base de datos central | PostgreSQL en Neon |
+| Base de datos local móvil | SQLite |
+| Repositorio de código fuente | GitHub |
 
 ## Instalación y configuración
 
